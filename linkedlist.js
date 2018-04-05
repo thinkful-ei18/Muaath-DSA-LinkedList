@@ -83,6 +83,22 @@ class LinkedList {
       previousNode.next = currNode.next;
     }
   }
+
+  inserBefore(item, value) {
+    let currNode = this.head;
+    let previousNode = this.head;
+    while (currNode.value !== value && currNode != null) {
+      previousNode = currNode; //one step behind
+      currNode = currNode.next;
+    }
+
+    if (currNode === null) {
+      console.log('Item not found cant insert');
+      return;
+    } else {
+      previousNode.next = new _Node(item, currNode);
+    }
+  }
 }
 
 module.exports = LinkedList;
