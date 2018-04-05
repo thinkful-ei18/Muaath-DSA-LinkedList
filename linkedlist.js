@@ -59,7 +59,7 @@ class LinkedList {
     //if the item to be deleted is the head
     //simply have head point to next.
     //the next node on the list will be head.
-    if (this.head === item) {
+    if (this.head.value === item) {
       this.head = this.head.next;
       return;
     }
