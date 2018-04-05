@@ -121,6 +121,22 @@ class LinkedList {
       currNode.next = new _Node(item, tempNode);
     }
   }
+  insertAt(item, position) {
+    let currNode = this.head;
+    let tempNode = this.head;
+    let count = 0;
+    //Will insert at last postion if linkedlist is not large enough.
+    while (currNode !== null) {
+      if (position === count) {
+        break;
+      }
+      tempNode = currNode; //one step behind.
+      currNode = currNode.next;
+      count++;
+    }
+
+    tempNode.next = new _Node(item, currNode);
+  }
 }
 
 module.exports = LinkedList;

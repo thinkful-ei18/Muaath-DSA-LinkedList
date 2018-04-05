@@ -8,6 +8,7 @@ function main() {
   SLL.insertLast('Boomer');
   SLL.insertLast('Helo');
   SLL.inserBefore('Athena', 'Boomer');
+  SLL.insertAt('Logan', 20);
   console.log(JSON.stringify(SLL));
   //   SLL.insertLast('Husker');
   //   SLL.insertLast('Starbuck');
