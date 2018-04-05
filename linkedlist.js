@@ -87,16 +87,38 @@ class LinkedList {
   inserBefore(item, value) {
     let currNode = this.head;
     let previousNode = this.head;
-    while (currNode.value !== value && currNode != null) {
+    while (currNode.value !== value && currNode !== null) {
       previousNode = currNode; //one step behind
       currNode = currNode.next;
     }
-
+    //currNode is null then item was not found
     if (currNode === null) {
       console.log('Item not found cant insert');
       return;
     } else {
+      //otherwise item was found
+      //previous Node next will be set to new Node item
+      //that new node will be pointing to currNode.
       previousNode.next = new _Node(item, currNode);
+    }
+  }
+
+  insertAfter(item, value) {
+    let currNode = this.head;
+    let tempNode = this.head;
+    while (currNode.value !== value && currNode !== null) {
+      currNode = currNode.next;
+      tempNode = currNode.next; //one step ahead
+    }
+    //currNode is null then item was not found
+    if (currNode === null) {
+      console.log('Item not found cant insert');
+      return;
+    } else {
+      //otherwise item was found
+      //currNode next will be set to new Node item
+      //that new node will be pointing to tempNode.
+      currNode.next = new _Node(item, tempNode);
     }
   }
 }
