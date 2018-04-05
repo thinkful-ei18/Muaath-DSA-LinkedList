@@ -1,5 +1,6 @@
 'use strict';
 const LinkedList = require('./linkedlist');
+const display = require('./supplemental');
 
 function main() {
   let SLL = new LinkedList();
@@ -7,9 +8,10 @@ function main() {
   SLL.insertFirst('Apollo');
   SLL.insertLast('Boomer');
   SLL.insertLast('Helo');
-  SLL.inserBefore('Athena', 'Boomer');
-  SLL.insertAt('Logan', 20);
-  console.log(JSON.stringify(SLL));
+  SLL.insertBefore('Athena', 'Boomer');
+  SLL.insertAt('Logan', 1);
+  SLL.insertBefore('Mo', 'Helo');
+  display(SLL);
   //   SLL.insertLast('Husker');
   //   SLL.insertLast('Starbuck');
   //   SLL.insertLast('Tauhida');

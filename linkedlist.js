@@ -84,7 +84,7 @@ class LinkedList {
     }
   }
 
-  inserBefore(item, value) {
+  insertBefore(item, value) {
     let currNode = this.head;
     let previousNode = this.head;
     while (currNode.value !== value && currNode !== null) {
